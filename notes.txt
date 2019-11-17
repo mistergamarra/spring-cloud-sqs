@@ -1,0 +1,8 @@
+# using profile : [cf-user]
+# added permissions :  AmazonSQSFullAccess, AWSCloudFormationFullAccess
+
+# delete the stack if exists
+aws cloudformation delete-stack  --stack-name user-sqs --profile cf-user
+
+# create stack into aws
+aws cloudformation create-stack  --stack-name user-sqs --template-body file://sqs.yml --profile cf-user
