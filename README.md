@@ -1,6 +1,6 @@
 ### Getting started
-
-Create an account named  **sqs-account** and this permissions **AmazonSQSFullAccess, AWSCloudFormationFullAccess** in your IAM section from your aws console.
+ 
+Create an account named  **sqs-account** and add this permissions **AmazonSQSFullAccess, AWSCloudFormationFullAccess** in your IAM section from your aws console.
 
 ### 1. Create a profile into AWS CLI using this command
 
@@ -20,3 +20,12 @@ Create an account named  **sqs-account** and this permissions **AmazonSQSFullAcc
 ### 3. Create **user-sqs** stack into aws
 
     aws cloudformation create-stack  --stack-name user-sqs --template-body file://cloudformation/user-sqs.yml --profile ses-account
+    
+    
+### 4. Use this payload and send a POST request to localhost:8080/api/user
+
+       {
+       	"firstName":"MIGUEL",
+       	"lastName":"GRAU",
+       	"age":15
+       }
